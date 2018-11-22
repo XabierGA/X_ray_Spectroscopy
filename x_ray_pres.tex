@@ -1,0 +1,178 @@
+\documentclass{beamer}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usetheme{Copenhagen}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsopn} 
+\usepackage{amsmath,amssymb,lmodern}
+\usepackage{pgf}  
+\usepackage{textpos}
+
+\addtobeamertemplate{navigation symbols}{}{%
+    \usebeamerfont{footline}%
+    \usebeamercolor[fg]{footline}%
+    \hspace{1em}%
+    \insertframenumber/\inserttotalframenumber  
+}
+%\logo{\pgfputat{\pgfxy(-1,7)}{\pgfbox[center,base]{\includegraphics[width=1.0cm]{logo.png}}}}
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{textblock*}{100mm}(\textwidth,-1cm)
+\includegraphics[height=1cm,width=1cm,keepaspectratio]{logo.png}
+\end{textblock*}}
+
+\title{X-Ray Spectroscopy}
+\subtitle{Kvantfysik 2018-2019}
+\author[Emma Lorenzo Casas \&  Xabier García Andrade]{\includegraphics[height=3cm,width=3cm]{logo.png}\\Emma Lorenzo Casas \&  Xabier García Andrade}
+
+
+
+\begin{document}
+	\frame {
+		\titlepage
+	}
+	\frame {
+		\frametitle{Theory}
+		\begin{columns}[T]
+     	\begin{column}[T]{5 cm}
+     	\begin{block}{Production of X-rays}
+     	X-rays are emitted when outer-shell electrons fill a vacancy in the atom´s inner shell.
+     \end{block}
+     	\begin{exampleblock}{Characteristic X-rays}
+     	Each element releases x-rays in a characteristic pattern.
+     	\end{exampleblock}
+     	\begin{block}{Need of screening constant}
+     	Interaction among electrons
+     	\end{block}
+     \end{column}
+     \begin{column}[T]{7cm} % alternative top-align that's better for graphics
+        \begin{alertblock}{Moseley´s law}
+        $$ \sqrt{E/R_{y}} = (Z-c) \sqrt{ \left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right)} $$
+        Grants the energy released by each transition.
+        \end{alertblock}
+        \begin{figure}
+        \includegraphics[height=3cm]{energy_dia.png}
+        \caption{\tiny Energy level diagram. Image from: http://pd.chem.ucl.ac.uk/pdnn/inst1/xrays.html}
+        \end{figure}
+     \end{column}
+     \end{columns}
+	}
+	\normalsize
+	\frame{
+		\frametitle{Methods}
+		\begin{columns}[T] % contents are top vertically aligned
+     \begin{column}[T]{5cm} % each column can also be its own environment
+     \begin{itemize}
+     \item Setting up panel control and software
+     \item Calibration procedure
+     \item Measurement of samples
+     \end{itemize}
+     \begin{block}{Measuring procedure}
+     \begin{itemize}
+     \item Turn on the high voltage
+     \item Adjust current 
+     \item Wait for the measurement to finish and calculate peak center
+     \end{itemize}
+     \end{block}
+     \end{column}
+     \begin{column}[T]{7cm} % alternative top-align that's better for graphics
+          \includegraphics[height=4cm]{x_ray_method.png}
+          
+     \end{column}
+     \end{columns}
+		}
+
+	\frame{
+		\frametitle{Results}
+		\framesubtitle{Known samples}
+		\begin{columns}[T]
+		\begin{column}[T]{7 cm}
+		\begin{exampleblock}{Silver sample}
+		\includegraphics[height= 5cm]{spect_ag.png}
+		Tabulated value: $$ K_{\alpha} = 22.17 \hspace{0.2cm} keV \hspace{0.5cm} \epsilon = 0.18 \%$$
+		\end{exampleblock}
+		\end{column}
+		\begin{column}[T]{7 cm}
+		\begin{exampleblock}{Zirconium sample}
+		\includegraphics[height= 5cm]{spec_zr.png}
+		Tabulated value: $ K_{\alpha} = 15.77 \hspace{0.2cm} keV \hspace{0.25cm} \epsilon = 0.95 \% $
+		\end{exampleblock}
+		\end{column}
+		\end{columns}
+	}
+	\frame{
+		\frametitle{Results}
+		\framesubtitle{Unknown samples}
+		\begin{columns}[T]
+		\begin{column}[T]{7 cm}
+		\begin{exampleblock}{6th sample}
+		\includegraphics[height= 4.5cm]{spect_6th_sample_au.png}
+		Tabulated values: 
+		\tiny	
+		$ K_{\alpha}^{Ge} = 9.88 \hspace{0.25cm} keV \hspace{0.5cm} \epsilon =  0.10 \%$
+		$$ K_{\alpha}^{Ni} = 7.44 \hspace{0.25cm} keV  \hspace{0.5cm} \epsilon = 1.47 \%$$
+		$$ K_{\alpha}^{Br} = 11.92 \hspace{0.25cm} keV \hspace{0.5cm} \epsilon = 2.18 \% $$
+		\normalsize
+		\end{exampleblock}
+		\end{column}
+		\begin{column}[T]{7 cm}
+		\begin{exampleblock}{Coins}
+		\includegraphics[height= 4.5cm]{spect_coin.png}
+		Tabulated value: $K_{\alpha}^{Cu} = 8.04 \hspace{0.25 cm} keV \hspace{0.3cm} \epsilon = 1.99 \%$
+		\end{exampleblock}
+		\end{column}
+		\end{columns}
+	}
+		\frame{
+		\frametitle{Verification of Moseley Law}
+		\begin{columns}[T]
+		\begin{column}[T]{7cm}
+		\includegraphics[height= 6cm]{moseley_law.pdf}
+		\begin{block}{Comparison with tabulated value}
+		Relative error  $\epsilon = 2.60 \%$
+		\end{block}
+		\end{column}
+		\begin{column}[T]{4cm}
+		\tiny
+		$$y=a \cdot x + b$$
+		$$a=(0.01047 \pm 0.00030) \hspace{0.2cm} keV^{-1}$$ $$ b=(0.27 \pm 0.41) \hspace{0.2cm} keV$$
+		\normalsize
+		\begin{exampleblock}{Rydberg constant}
+		$$a = R_{y} * \left(\frac{1}{n_1^2} -  \frac{1}{n_2^2} \right)$$
+		$$u_{(R_{y})} = \frac{u_{(a)}}{\left(\frac{1}{n_1^2}-\frac{1}{n_2^2}\right)}$$
+		
+		$$R_{y} = (13.958 \pm 0.040) \hspace{0.2cm} eV$$
+		\end{exampleblock}
+		\end{column}
+		\end{columns}
+
+	}
+	\frame{
+		\frametitle{Discussion of the results and conclusions}
+		\begin{columns}[T]
+		\begin{column}[T]{5.5 cm}
+		\begin{block}{Accuracy of the method}
+		Correct prediction of known samples.
+		\end{block}
+		\begin{exampleblock}{Source of errors}
+		\begin{itemize}
+		\item Contaminated samples
+		\item Incorrect Rate
+		\item Noise
+		\end{itemize}
+		\end{exampleblock}
+		\end{column}
+		\begin{column}[T]{5.5 cm}
+		\begin{alertblock}{Why did we choose these materials?}
+		After calculating the relative error, these materials best reproduced the accuracy of the method.
+		\end{alertblock}
+		\end{column}
+		\end{columns}
+	
+	}
+
+\end{document}
